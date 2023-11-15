@@ -24,8 +24,11 @@ const paymentSchema = new mongoose.Schema({
     },
     created_at: {
         type: Date,
-        default: Date.now
-    }
+    },
+    userEmail: {
+        type: String,
+        required: true
+    },
 });
 
 const Payment = mongoose.model('Payment', paymentSchema);

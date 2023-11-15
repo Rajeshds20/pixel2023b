@@ -7,7 +7,7 @@ const participantSchema = new mongoose.Schema({
         required: true
     },
     year: {
-        type: Number,
+        type: String,
         required: true
     },
     branch: {
@@ -33,15 +33,15 @@ const participantSchema = new mongoose.Schema({
     paymentStatus: {
         type: String,
         enum: ['paid', 'pending', 'not paid'],
-        default: 'not paid'
+        default: 'paid'
     },
     paymentId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Payment',
     },
-    team: {
-        type: Array,
-        default: [],
+    size: {
+        type: Number,
+        required: true
     }
 });
 
